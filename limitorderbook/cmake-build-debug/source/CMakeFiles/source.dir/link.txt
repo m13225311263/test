@@ -1,0 +1,2 @@
+/usr/bin/ar.exe qc libsource.a  CMakeFiles/source.dir/facktrader.cpp.o CMakeFiles/source.dir/market.cpp.o CMakeFiles/source.dir/realtrader.cpp.o CMakeFiles/source.dir/trader.cpp.o
+/usr/bin/ranlib.exe libsource.a

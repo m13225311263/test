@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/engine.cpp
+memory
+-
+engine.h
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/engine.h
+orderbook.h
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/orderbook.h
+
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/engine.h
+memory
+-
+orderbook.h
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/orderbook.h
+
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/orderbook.cpp
+orderbook.h
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/orderbook.h
+iostream
+-
+
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/orderbook.h
+cstdint
+-
+limits
+-
+array
+-
+boost/intrusive/slist.hpp
+-
+types.h
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/types.h
+
+/cygdrive/d/Git/limitorderbook/limitorderbook/source/types.h
+

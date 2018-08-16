@@ -1,0 +1,5 @@
+C:\Users\VickuGu\.CLion2018.1\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=C:/cygwin64/bin/g++.exe -G "CodeBlocks - Unix Makefiles" /cygdrive/d/Git/limitorderbook/limitorderbook
+-- Boost version: 1.68.0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/d/Git/limitorderbook/limitorderbook/cmake-build-debug
