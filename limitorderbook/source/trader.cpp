@@ -3,13 +3,19 @@
 //
 
 #include "trader.h"
+#include "logger.h"
 
 using namespace ts;
 
-Trader::Trader(uint64_t trader_id):trader_id(trader_id) {
-    market = Market::get_instance();
+Trader::Trader(int trader_id):trader_id(trader_id) {
 }
 
 void Trader::place_order(const Order &order) {
-    market->place_order(order);
+    Market::get_instance()->place_order(order);
+    //LOG_INFO << "|sec_id:" << ENDL;
+
+}
+
+int Trader::get_trader_id() const {
+    return trader_id;
 }

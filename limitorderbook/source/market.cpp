@@ -1,9 +1,9 @@
 //
-// Created by Rong Zhou on 2018-08-13.
+// Created by vicky gu on 2018-08-13.
 //
-
-#include "market.h"
 #include <iostream>
+#include "market.h"
+#include "logger.h"
 
 using namespace std;
 namespace ts {
@@ -14,9 +14,6 @@ namespace ts {
         return &ob;
     }
 
-    Market::Market() {
-        cout << "construct" << endl;
-    }
 
     void Market::shutdown() {
 
@@ -27,7 +24,7 @@ namespace ts {
         bidMax = kMaxPrice;
     }
 
-    void Market::build_trade_report(int buyer, int seller, array<char,secSize> sec_id, bool side, int price, uint64_t price_level_qty) {
+    void Market::build_trade_report(int buyer, int seller, string sec_id, bool side, int price, uint64_t price_level_qty) {
         Order exec ={};
         if (price_level_qty == 0) {
             return;
@@ -40,13 +37,12 @@ namespace ts {
         exec.trader_id = 0;
         string sec_str(begin(sec_id), end(sec_id));
 
-        cout << "|sec_id:  " << sec_str << "|side: " << side << "|qty: " << price_level_qty << "|price: " << price
-        << "|buyer: " << buyer << "|seller: " << seller << endl;
+        //LOG_INFO<< "|sec_id:  " << sec_str << "|side: " << side << "|qty: " << price_level_qty << "|price: " << price
+        //<< "|buyer: " << buyer << "|seller: " << seller <<ENDL;
 
     }
 
     uint64_t Market::place_order(const Order &order) {
-        cout << "In place_order " << endl;
         int price = order.price;
         uint64_t order_qty = order.qty;
         if (order.side) { /*Buy*/
@@ -67,9 +63,8 @@ namespace ts {
                                 ++price_level_entry;
                             }
                             price_level->erase(price_level->begin(), price_level_entry);
+                            return order_id;
                         }
-                        return order_id;
-
                     }
                     price_level->clear();
                     price_level++;
@@ -96,9 +91,8 @@ namespace ts {
                                 ++price_level_entry;
                             }
                             price_level->erase(price_level->begin(), price_level_entry);
+                            return ++order_id;
                         }
-                        return order_id;
-
                     }
                     price_level->clear();
                     price_level--;

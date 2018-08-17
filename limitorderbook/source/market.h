@@ -13,7 +13,7 @@ namespace ts {
 
     class Market {
     public:
-        Market();
+        Market() = default;
 
         ~Market() = default;
 
@@ -24,7 +24,7 @@ namespace ts {
 
         void initialize();
 
-        void build_trade_report(int buyer, int seller, std::array<char,secSize> sec_id, bool side, int price, uint64_t price_level_qty);
+        void build_trade_report(int buyer, int seller, std::string sec_id, bool side, int price, uint64_t price_level_qty);
 
         uint64_t place_order(const Order &order);
 

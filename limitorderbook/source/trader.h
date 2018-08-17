@@ -11,19 +11,17 @@
 namespace ts {
     class Trader {
     public :
-        Trader(uint64_t trader_id);
+        Trader(int trader_id);
         virtual ~Trader() = default;
     protected:
         void init();
         void place_order(const Order &order);
         void cancel_order();
         void get_information();
+        int get_trader_id() const;
 
     private:
-        uint64_t trader_id;
-        std::unique_ptr<Market> market;
-
-
+        int trader_id;
 
     };
 }

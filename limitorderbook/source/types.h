@@ -14,8 +14,9 @@ namespace ts {
     struct Order {
         int64_t order_id;
         int trader_id;
-        std::array<char,secSize> sec_id;
+        std::string sec_id;
         bool side;
+        char order_type;
         int price;
         uint64_t qty;
     };
