@@ -15,7 +15,9 @@ void Trader::place_order(const Order &order) {
     //LOG_INFO << "|sec_id:" << ENDL;
 
 }
-
+void Trader::shutdown() {
+    Market::get_instance()->shutdown();
+}
 int Trader::get_trader_id() const {
     return trader_id;
 }

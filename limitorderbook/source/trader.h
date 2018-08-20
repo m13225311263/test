@@ -14,8 +14,8 @@ namespace ts {
         Trader(int trader_id);
         virtual ~Trader() = default;
     protected:
-        void init();
         void place_order(const Order &order);
+        void shutdown();
         void cancel_order();
         void get_information();
         int get_trader_id() const;

@@ -12,7 +12,7 @@ namespace ts {
     constexpr int kMinPrice = 1;
     constexpr int secSize = 7;
     struct Order {
-        int64_t order_id;
+        uint64_t order_id;
         int trader_id;
         std::string sec_id;
         bool side;
@@ -21,12 +21,10 @@ namespace ts {
         uint64_t qty;
     };
 
-    struct OrderBookUnit : public boost::intrusive::slist_base_hook<> {
-        int64_t qty{0};
+    struct PriceUnit {
+        uint64_t order_id;
         int trader_id;
-
+        uint64_t qty;
     };
-    typedef boost::intrusive::slist<OrderBookUnit, boost::intrusive::cache_last<true>> PriceUnit;
-
 }
 #endif //LIMITORDERBOOK_TYPES_H
